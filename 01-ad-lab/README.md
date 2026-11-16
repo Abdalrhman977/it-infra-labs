@@ -37,9 +37,12 @@ Build a Windows Server 2022 domain controller and a base OU structure.
 - (add 2-3 lines in your own words)
 
 ## Problems and fixes
+
 | Symptom | Cause | Fix |
 |---|---|---|
-| (e.g. DC01 showed only one adapter) | (cause) | (fix) |
+| DC01 showed only one network adapter (Ethernet0) inside Windows | Second adapter missing or not detected in the VM settings | Checked VM Settings > Network Adapter, added/enabled the second adapter, renamed them NAT and labnet |
+| `dcdiag` showed warnings (DNS timeouts for `_ldap._tcp.dc._msdcs.lab.local` and `wpad`) | Test ran right after boot, before the DNS service was fully up | Waited a few minutes and re-ran `dcdiag`, all tests passed |
+| OU names had typos (`Comapny`, `Computer`) | Typed too fast when creating the OUs | Right-click > Rename to `Company` and `Computers` |
 
 ## Next
 Week 2: users, groups, client domain join, DHCP, shares, PowerShell.
