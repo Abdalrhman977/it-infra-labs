@@ -24,11 +24,11 @@ Build a Windows Server 2022 domain controller and a base OU structure.
 6. Built the OU tree: Company > Users, Computers, Groups, Servers
 
 ## Verification
-![dcdiag](<img width="822" height="533" alt="image" src="https://github.com/user-attachments/assets/8d1ffd77-5285-401f-8363-e44aa10fe4ff" />)
-![nslookup](<img width="962" height="332" alt="image" src="https://github.com/user-attachments/assets/57c4ff82-405b-4e6c-826c-0b2aa9b92749" />
-)
-![OU tree](<img width="1267" height="1291" alt="image" src="https://github.com/user-attachments/assets/37ef3272-6f29-4382-a790-70929a24a50e" />
-)
+![dcdiag] <img width="822" height="533" alt="image" src="https://github.com/user-attachments/assets/8d1ffd77-5285-401f-8363-e44aa10fe4ff" />
+![nslookup] <img width="962" height="332" alt="image" src="https://github.com/user-attachments/assets/57c4ff82-405b-4e6c-826c-0b2aa9b92749" />
+
+![OU tree] <img width="1267" height="1291" alt="image" src="https://github.com/user-attachments/assets/37ef3272-6f29-4382-a790-70929a24a50e" />
+
 
 
 ## What I learned
