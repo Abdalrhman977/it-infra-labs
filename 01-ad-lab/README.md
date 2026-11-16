@@ -42,7 +42,8 @@ Build a Windows Server 2022 domain controller and a base OU structure.
 
 ## What I learned
 - DNS is the backbone of AD: the SRV records under _msdcs are how clients find the DC
-- (add 2-3 lines in your own words)
+- dcdiag checks the health of a DC, and warnings right after boot can be normal because services aren't ready yet
+- OUs organize users, computers and servers so policies can be applied later
 
 ## Problems and fixes
 
