@@ -6,7 +6,11 @@
 - Snapshots: clean-install, static-ip, domain-created
 - Next: Week 2, users/groups, client join, DHCP, shares
 
-## 2026-11-17 - Week 2 Day 2
-- Created 10 users and 3 groups (IT, Sales, HR) in lab.local
-- Set CLIENT01 static IP, joined it to the domain, logged in as a domain user
-- Issue: ADUC didn't show new user until refresh (F5)
+## Week 2 (17 - 18 Nov 2026)
+- Created users and 3 groups (IT, Sales, HR) in lab.local, joined CLIENT01 to the domain, logged in as a domain user
+- Installed and authorized DHCP on DC01, scope 192.168.10.100-200 with DNS option
+- Created IT, Sales and HR shares with share + NTFS permissions through groups, tested per user
+- Wrote a PowerShell script that creates users from a CSV (skips existing, error handling, password prompted at runtime)
+- Issues: ADUC didn't show new user until refresh (F5); Sales share wouldn't open until I fixed the NTFS permissions
+- Snapshots: client-joined, shares-done, ps-users, week2-done
+- Next: Week 3, GPOs, file server, backup, second DC
