@@ -1,3 +1,4 @@
+
 # Week 2: Users, Client, DHCP, Shares, PowerShell
 > Home lab (VMware), not production.
 
@@ -62,12 +63,21 @@ never stored in the repo. Re-running it on existing users prints SKIP for each
   because the access token updates at logon.
 
 ## Screenshots
-![DHCP address leases](screenshots/w2-01-dhcp-leases.png)
-![DHCP address pool](screenshots/w2-02-dhcp-pool.png)
-![Sales share permissions](screenshots/w2-03-share-permissions-sales.png)
-![Sales NTFS permissions](screenshots/w2-04-ntfs-sales.png)
-![Script re-run showing SKIP](screenshots/w2-05-script-rerun.png)
-![ADUC groups](screenshots/w2-06-aduc-groups.png)
-![ADUC users](screenshots/w2-07-aduc-users.png)
-![CLIENT01 joined to lab.local](screenshots/w2-08-client-domain-joined.png)
+
+DHCP address leases <img width="1234" height="1245" alt="Screenshot 2026-11-18 083612" src="https://github.com/user-attachments/assets/1728dae4-6d81-4391-9259-7d7b5fe7ab1d" />
+DHCP address pool <img width="1258" height="1192" alt="Screenshot 2026-11-18 083632" src="https://github.com/user-attachments/assets/b95d5a51-e293-474d-a36e-df7a7b21a924" />
+
+Sales share permissions <img width="819" height="871" alt="Screenshot 2026-11-18 083831" src="https://github.com/user-attachments/assets/460d2839-ef22-4b0a-8dbf-9ebecaf55b72" />
+
+
+Sales NTFS permissions <img width="1036" height="982" alt="Screenshot 2026-11-18 083853" src="https://github.com/user-attachments/assets/f560a2fb-9c84-409e-bc89-6bf2e10e5647" />
+
+Script re-run showing SKIP <img width="1213" height="1272" alt="Screenshot 2026-11-18 083956" src="https://github.com/user-attachments/assets/08bed825-76a9-4524-b664-eac82cb9994d" />
+
+ADUC groups <img width="1273" height="1177" alt="Screenshot 2026-11-18 083342" src="https://github.com/user-attachments/assets/e7e4c7c0-e1ac-45d0-bb2e-ea75d58a2d2b" />
+
+ADUC users <img width="1265" height="1161" alt="Screenshot 2026-11-18 083423" src="https://github.com/user-attachments/assets/08fcf3fe-853f-4ae5-a709-b101658b85ea" />
+
+CLIENT01 joined to lab.local <img width="1192" height="878" alt="Screenshot 2026-11-18 083514" src="https://github.com/user-attachments/assets/0b3666f4-e333-4f90-83dc-8b65a397a815" />
+
 <!-- TODO: add w2-09-dhcp-scope-options.png and w2-10-group-members.png -->
