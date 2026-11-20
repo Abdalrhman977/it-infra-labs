@@ -79,5 +79,3 @@ ADUC groups <img width="1273" height="1177" alt="Screenshot 2026-11-18 083342" s
 ADUC users <img width="1265" height="1161" alt="Screenshot 2026-11-18 083423" src="https://github.com/user-attachments/assets/08fcf3fe-853f-4ae5-a709-b101658b85ea" />
 
 CLIENT01 joined to lab.local <img width="1192" height="878" alt="Screenshot 2026-11-18 083514" src="https://github.com/user-attachments/assets/0b3666f4-e333-4f90-83dc-8b65a397a815" />
-
-<!-- TODO: add w2-09-dhcp-scope-options.png and w2-10-group-members.png -->
