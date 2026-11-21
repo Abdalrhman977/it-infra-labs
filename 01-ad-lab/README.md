@@ -18,6 +18,8 @@ Windows Server 2022 domain `lab.local` built from scratch in VMware Workstation.
 |---|---|
 | Hypervisor | VMware Workstation |
 | DC01 | Windows Server 2022 · 192.168.10.10 · AD DS, DNS, DHCP, file shares |
+| DC02 | 192.168.10.11 · second DC (Week 3) |
+| FS1 | 192.168.10.12 · file server, FSRM (Week 3) |
 | CLIENT01 | Windows 11 Enterprise eval · DHCP (192.168.10.100) |
 | Network | LAN segment `labnet` 192.168.10.0/24 + NAT adapter on DC01 |
 | Domain | `lab.local` (new forest) |
@@ -27,7 +29,7 @@ Windows Server 2022 domain `lab.local` built from scratch in VMware Workstation.
 > Home lab (VMware), not production.
 
 ### Overview
-Added Group Policy for the Sales team, a member file server (FS01) with an FSRM quota,
+Added Group Policy for the Sales team, a member file server (FS1) with an FSRM quota,
 a system-state backup of the DC, an AD Recycle Bin restore test, and a second domain
 controller (DC02).
 
@@ -36,7 +38,7 @@ controller (DC02).
 |---|---|---|
 | DC01 | DC, DNS, DHCP | 192.168.10.10 (static) |
 | DC02 | Second DC | 192.168.10.11 |
-| FS01 | File server, FSRM | 192.168.10.12 |
+| FS1 | File server, FSRM | 192.168.10.12 |
 | CLIENT01 | Windows 11 client | DHCP |
 
 Network: `labnet` 192.168.10.0/24, domain `lab.local`.
@@ -52,7 +54,7 @@ Network: `labnet` 192.168.10.0/24, domain `lab.local`.
 | Share | Server | Access | Quota |
 |---|---|---|---|
 | Sales | DC01 (`\\DC01\Sales`) | Sales group (from Week 2) | none |
-| HR | FS01 (`\\fs1\hr`) | HR group (permissions not captured) | FSRM 500 MB |
+| HR | FS1 (`\\fs1\hr`) | HR group (permissions not captured) | FSRM 500 MB |
 
 Quota test: copying a 125 MB folder into the HR share failed with "not enough space".
 
@@ -71,7 +73,7 @@ Advertising and FrsEvent but **failed DFSREvent** (SYSVOL replication warnings).
    ![GPO sales-drive-wallpaper](images/3-01-gpo-sales-drive-wallpaper.png)
 2. CLIENT01 with the Sales share mapped (shows twice, as S: and Z:)
    ![Sales drive mapped](images/3-02-client01-sales-drive-mapped.png)
-3. FSRM quota blocks a 125 MB copy to the HR share on FS01
+3. FSRM quota blocks a 125 MB copy to the HR share on FS1
    ![FSRM quota](images/3-03-fsrm-quota-hr-copy-blocked.png)
 4. System-state backup completed, `wbadmin get versions`
    ![wbadmin backup](images/3-04-wbadmin-system-state-backup.png)
@@ -85,7 +87,7 @@ Advertising and FrsEvent but **failed DFSREvent** (SYSVOL replication warnings).
 ### Not captured
 - Password / lockout GPO settings
 - Deny-removable-storage GPO
-- FSRM quota setup (500 MB template) and HR share/NTFS permissions on FS01
-- FS01 and DC02 IP configuration
+- FSRM quota setup (500 MB template) and HR share/NTFS permissions on FS1
+- FS1 and DC02 IP configuration
 - DC02 promotion wizard and `repadmin /replsummary`
 - Enabling the AD Recycle Bin
