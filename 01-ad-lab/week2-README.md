@@ -17,6 +17,9 @@
 | Sales | Sales team |
 | HR | HR team |
 
+All three are **Global Security** groups. Security groups can be given permissions
+(NTFS, shares, GPO filtering); distribution groups are email-only.
+
 ## DHCP scope
 | Setting | Value |
 |---|---|
@@ -25,8 +28,20 @@
 | DNS option | 192.168.10.10 |
 | Gateway | none (isolated lab segment) |
 | Static IPs outside scope | DC01 .10 |
+| Bound to | labnet adapter only (not NAT) |
 
 CLIENT01 receives 192.168.10.100 from the scope.
+
+DC01 is **authorized** in AD, so this Windows DHCP server is allowed to serve the domain.
+Authorization only stops rogue *Windows* DHCP servers; a router or Linux box could still
+hand out addresses (DHCP snooping on switches covers that).
+
+## Domain join
+- Before joining, tested from CLIENT01: `ping 192.168.10.10` and `nslookup lab.local`
+- Joined `lab.local` and logged in as a domain user (`LAB\user` or `user@lab.local`)
+- Verified with `whoami` and `echo %userdomain%`, and saw CLIENT01 in ADUC
+- Moved CLIENT01 from the default Computers container into `Company > Computers`,
+  because GPOs can't be linked to the default container
 
 ## Permission table
 | Folder | Group | Share | NTFS |
@@ -49,18 +64,26 @@ exist, creates the rest, adds them to their group, and prints
 CREATED / SKIP / FAILED per user. The password is prompted at runtime and
 never stored in the repo. Re-running it on existing users prints SKIP for each
 (see screenshot), so it is safe to run twice.
+`try/catch` lets it continue after one failure and report which user failed.
 
 ## What broke and how I fixed it
 | Symptom | Cause | Fix |
 |---|---|---|
 | ADUC didn't show a new user | Console view was stale | Refreshed with F5 |
 | Sales share would not open for a Sales user | NTFS permissions on the Sales folder were wrong (share permission alone was not enough) | Corrected NTFS: Sales group with Modify, re-tested with a Sales user |
+| Script wouldn't run (execution policy prompt) | Default policy blocks unsigned scripts | `Set-ExecutionPolicy -Scope Process Bypass` (this session only, not machine-wide) |
+| A user stayed in Sales although the CSV said HR | The user already existed from Day 1, so the script skipped the account and never changed its group | Fix is `Add-ADGroupMember` by hand. Lesson: "skip if exists" doesn't update existing users |
 
 ## Lessons
 - Opening a share needs BOTH layers to allow access. Check NTFS first when
   the share permissions look correct but access is still denied.
 - After changing group membership, log off and on again before testing,
   because the access token updates at logon.
+- The client's DNS must point to the DC before joining: it finds the domain through SRV records.
+- Joining creates a computer account in AD and a secure channel between the PC and the domain.
+- DHCP is DORA: Discover and Request are broadcasts, Offer and Acknowledge come from the server.
+- Reset password, unlock and disable are three different things: unlock only clears a lockout.
+- Prompting with `Read-Host -AsSecureString` keeps passwords out of scripts and GitHub.
 
 ## Screenshots
 
