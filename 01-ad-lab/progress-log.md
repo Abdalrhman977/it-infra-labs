@@ -14,3 +14,9 @@
 - Issues: ADUC didn't show new user until refresh (F5); Sales share wouldn't open until I fixed the NTFS permissions
 - Snapshots: client-joined, shares-done, ps-users, week2-done
 - Next: Week 3, GPOs, file server, backup, second DC
+
+## Week 3 (to 21 Nov 2026)
+- GPOs: password/lockout, Sales drive map + wallpaper, deny removable storage; Sales drive shows mapped on CLIENT01 (twice, S: and Z:)
+- Built FS01 file server, FSRM 500 MB quota on the HR share, quota blocked a 125 MB copy
+- wbadmin system-state backup of DC01 completed; AD Recycle Bin restore of two deleted users worked
+- Promoted DC02; dcdiag failed DFSREvent (SYSVOL replication), next: fix and check with repadmin
