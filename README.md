@@ -9,7 +9,7 @@ Hands-on labs for Windows Server, Active Directory, networking, Linux and Azure,
 
 | # | Lab | What it covers | Status |
 |---|---|---|---|
-| 01 | [Active Directory](01-ad-lab/) | Domain controller, DNS, OUs, users/groups, client join, DHCP, file shares, PowerShell automation | ✅ Weeks 1-2 · 🛠️ Week 3 in progress |
+| 01 | [Active Directory](01-ad-lab/) | Domain controller, DNS, OUs, users/groups, client join, DHCP, file shares, PowerShell automation, GPOs, FSRM quotas, backup, second DC | ✅ Weeks 1-3 · 🛠️ DC02 replication fix pending |
 | 02 | [Networking](02-network-lab/) | Subnetting, VLANs, routing | 🗓️ Planned |
 | 03 | [Wireshark](03-wireshark/) | Capturing and reading DHCP, DNS, ARP, TCP traffic | 🗓️ Planned |
 | 04 | [Linux](04-linux/) | Users, permissions, services, SSH | 🗓️ Planned |
