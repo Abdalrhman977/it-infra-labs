@@ -23,4 +23,4 @@
 - 22 Nov: took the missing screenshots (policies, FS1 config, quotas, IPs, DC02, Recycle Bin)
 - 22 Nov: DC01-down test: CLIENT01 logged on via DC02 (nltest, %logonserver%), hr share still worked
 - 22 Nov: set up DHCP hot-standby failover DC01 → DC02 and second DNS .11; client got its lease from DC02. Fixed a client pointing DNS at 8.8.8.8
-- Lab paused after Week 3. Ideas for later are in README.md > Future plans
+- Weeks 1-3 done. Ideas for later are in README.md > Future plans

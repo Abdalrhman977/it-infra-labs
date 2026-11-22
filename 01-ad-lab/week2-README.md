@@ -120,4 +120,4 @@ never stored in the repo. Re-running it on existing users prints SKIP for each
 <img width="1213" height="1272" alt="Script re-run showing SKIP" src="https://github.com/user-attachments/assets/08bed825-76a9-4524-b664-eac82cb9994d" />
 
 ## Next
-Week 3: GPOs, file server, backup, second DC. See [week3-README.md](week3-README.md).
+Week 3: GPOs, file server, backup, second DC. See [Week 3](README.md#week-3-gpos-file-server-dc02-failover).

@@ -9,7 +9,7 @@ Hands-on labs for Windows Server, Active Directory, networking, Linux and Azure,
 
 | # | Lab | What it covers | Status |
 |---|---|---|---|
-| 01 | [Active Directory](01-ad-lab/) | Domain controller, DNS, OUs, users/groups, client join, DHCP, file shares, PowerShell automation, GPOs, FSRM quotas, backup, second DC | ✅ Weeks 1-3 (paused) |
+| 01 | [Active Directory](01-ad-lab/) | Domain controller, DNS, OUs, users/groups, client join, DHCP, file shares, PowerShell automation, GPOs, FSRM quotas, backup, second DC, DHCP failover | ✅ Weeks 1-3 done |
 | 02 | [Networking](02-network-lab/) | Subnetting, VLANs, routing | 🗓️ Planned |
 | 03 | [Wireshark](03-wireshark/) | Capturing and reading DHCP, DNS, ARP, TCP traffic | 🗓️ Planned |
 | 04 | [Linux](04-linux/) | Users, permissions, services, SSH | 🗓️ Planned |
@@ -24,33 +24,40 @@ Hands-on labs for Windows Server, Active Directory, networking, Linux and Azure,
 - **DHCP** installed and authorized, scope `192.168.10.100-200` with DNS option
 - **File shares** secured through groups with share + NTFS permissions; tested that each user can only open their own department's share
 - **PowerShell script** that bulk-creates users from CSV: idempotent (skips existing users), per-user CREATED / SKIP / FAILED output, password prompted at runtime
-- **Troubleshooting documented** for every week (e.g. NTFS vs share permission conflict, dcdiag DNS timeouts after boot)
+- **Group Policy**: password/lockout policy, Sales drive map + wallpaper, removable storage blocked
+- **File server FS1** with FSRM 500 MB hard quotas; a 125 MB copy over the limit was blocked
+- **System-state backup** with `wbadmin` and an **AD Recycle Bin** restore of two deleted users
+- **Second DC (DC02)** replicating with 0 failures (`repadmin /replsummary`)
+- **Failover test**: with DC01 down, the client logged on via DC02 and got its DHCP lease from DC02 (hot-standby failover)
+- **Troubleshooting documented** for every week (e.g. NTFS vs share permission conflict, dcdiag DNS timeouts after boot, wrong client DNS)
 
 ## Lab topology
 
 ```
-                 ┌───────────── labnet  192.168.10.0/24 (isolated LAN segment) ─────────────┐
-                 │                                                                          │
-   ┌─────────────┴──────────────┐                                      ┌────────────────────┴───┐
-   │ DC01 · Windows Server 2022 │                                      │ CLIENT01 · Windows 11  │
-   │ 192.168.10.10 (static)     │◄──── DHCP lease / DNS / AD logon ────│ 192.168.10.100 (DHCP)  │
-   │ AD DS · DNS · DHCP · Files │                                      │ joined to lab.local    │
-   └────────────────────────────┘                                      └────────────────────────┘
-          │ second NIC: NAT (internet for updates)
+                 labnet 192.168.10.0/24 (isolated LAN segment)
+   ┌───────────────┬───────────────┬───────────────┬───────────────┐
+ DC01 .10        DC02 .11        FS1 .12         CLIENT01 .50
+ AD DS, DNS      AD DS, DNS, GC  File server     Windows 11
+ DHCP active  ◄─ hot standby ─►  FSRM            joined to lab.local
+                 DHCP standby
 ```
+
+DHCP scope 192.168.10.100-200 with hot-standby failover between DC01 and DC02.
+DC01 also has a NAT adapter for internet updates. Details: [01-ad-lab](01-ad-lab/README.md#topology).
 
 ## Skills demonstrated
 
-`Active Directory` `Windows Server 2022` `DNS` `DHCP` `Group-based access control` `NTFS / share permissions`
-`PowerShell` `VMware Workstation` `Snapshots` `dcdiag` `Troubleshooting` `Technical documentation`
+`Active Directory` `Windows Server 2022` `DNS` `DHCP failover` `Group Policy` `FSRM`
+`NTFS / share permissions` `Backup / Recycle Bin` `repadmin / dcdiag` `PowerShell`
+`VMware Workstation` `Troubleshooting` `Technical documentation`
 
 ## How each lab is documented
 
-Every week's write-up follows the same structure:
+Each write-up covers:
 
-1. **Goal**: what this week should achieve
+1. **Goal / overview**: what the week should achieve
 2. **Environment**: VMs, IPs, roles
-3. **What I did**: numbered steps (with snapshot names so any step can be rolled back)
+3. **What I did**: the build steps
 4. **Verification**: screenshots proving it works
 5. **Problems and fixes**: symptom / cause / fix table
 6. **Lessons**: what I'd tell someone doing it next
@@ -59,7 +66,7 @@ Every week's write-up follows the same structure:
 
 - [x] AD week 1: domain controller + OU design
 - [x] AD week 2: users, groups, client join, DHCP, shares, PowerShell
-- [ ] AD week 3: Group Policy, file server, backup, second DC
+- [x] AD week 3: Group Policy, file server, backup, second DC, DHCP failover
 - [ ] Networking lab
 - [ ] Wireshark captures of the AD lab traffic (DHCP DORA, DNS SRV lookups, Kerberos)
 - [ ] Linux lab
