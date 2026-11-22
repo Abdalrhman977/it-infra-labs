@@ -19,8 +19,8 @@
 - GPOs: password/lockout (min length 3, complexity off, 5-attempt lockout), Sales drive map + wallpaper, deny all removable storage; Sales drive shows mapped on CLIENT01 (twice, S: and Z:)
 - Built FS1 (192.168.10.12) with hr and sales shares, HR share = Change / NTFS = Modify, FSRM 500 MB hard quotas on both; quota blocked a 125 MB copy
 - wbadmin system-state backup completed; Recycle Bin enabled, restored two deleted users
-- Promoted DC02 (192.168.10.11, GC); repadmin /replsummary 0 failures, but dcdiag DFSREvent failed earlier
+- Promoted DC02 (192.168.10.11, GC); repadmin /replsummary 0 failures
 - 22 Nov: took the missing screenshots (policies, FS1 config, quotas, IPs, DC02, Recycle Bin)
 - 22 Nov: DC01-down test: CLIENT01 logged on via DC02 (nltest, %logonserver%), hr share still worked
 - 22 Nov: set up DHCP hot-standby failover DC01 → DC02 and second DNS .11; client got its lease from DC02. Fixed a client pointing DNS at 8.8.8.8
-- Next: re-run dcdiag on DC02, remove the duplicate Sales drive mapping, raise the password policy to 12+
+- Lab paused after Week 3. Ideas for later are in README.md > Future plans

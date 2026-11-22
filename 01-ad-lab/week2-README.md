@@ -1,6 +1,6 @@
+# Week 2: Users, Client, DHCP, Shares, PowerShell (Home Lab)
 
-# Week 2: Users, Client, DHCP, Shares, PowerShell
-> Home lab (VMware), not production.
+> Home lab built in VMware Workstation. Not a production environment.
 
 ## What I built
 - 15 users (first.last) in OU Company > Users, created by hand and by script
@@ -87,18 +87,37 @@ never stored in the repo. Re-running it on existing users prints SKIP for each
 
 ## Screenshots
 
-DHCP address leases <img width="1234" height="1245" alt="Screenshot 2026-11-18 083612" src="https://github.com/user-attachments/assets/1728dae4-6d81-4391-9259-7d7b5fe7ab1d" />
-DHCP address pool <img width="1258" height="1192" alt="Screenshot 2026-11-18 083632" src="https://github.com/user-attachments/assets/b95d5a51-e293-474d-a36e-df7a7b21a924" />
+**ADUC users**
 
-Sales share permissions <img width="819" height="871" alt="Screenshot 2026-11-18 083831" src="https://github.com/user-attachments/assets/460d2839-ef22-4b0a-8dbf-9ebecaf55b72" />
+<img width="1265" height="1161" alt="ADUC users" src="https://github.com/user-attachments/assets/08fcf3fe-853f-4ae5-a709-b101658b85ea" />
 
+**ADUC groups**
 
-Sales NTFS permissions <img width="1036" height="982" alt="Screenshot 2026-11-18 083853" src="https://github.com/user-attachments/assets/f560a2fb-9c84-409e-bc89-6bf2e10e5647" />
+<img width="1273" height="1177" alt="ADUC groups" src="https://github.com/user-attachments/assets/e7e4c7c0-e1ac-45d0-bb2e-ea75d58a2d2b" />
 
-Script re-run showing SKIP <img width="1213" height="1272" alt="Screenshot 2026-11-18 083956" src="https://github.com/user-attachments/assets/08bed825-76a9-4524-b664-eac82cb9994d" />
+**CLIENT01 joined to lab.local**
 
-ADUC groups <img width="1273" height="1177" alt="Screenshot 2026-11-18 083342" src="https://github.com/user-attachments/assets/e7e4c7c0-e1ac-45d0-bb2e-ea75d58a2d2b" />
+<img width="1192" height="878" alt="CLIENT01 joined to lab.local" src="https://github.com/user-attachments/assets/0b3666f4-e333-4f90-83dc-8b65a397a815" />
 
-ADUC users <img width="1265" height="1161" alt="Screenshot 2026-11-18 083423" src="https://github.com/user-attachments/assets/08fcf3fe-853f-4ae5-a709-b101658b85ea" />
+**DHCP address pool**
 
-CLIENT01 joined to lab.local <img width="1192" height="878" alt="Screenshot 2026-11-18 083514" src="https://github.com/user-attachments/assets/0b3666f4-e333-4f90-83dc-8b65a397a815" />
+<img width="1258" height="1192" alt="DHCP address pool" src="https://github.com/user-attachments/assets/b95d5a51-e293-474d-a36e-df7a7b21a924" />
+
+**DHCP address leases**
+
+<img width="1234" height="1245" alt="DHCP address leases" src="https://github.com/user-attachments/assets/1728dae4-6d81-4391-9259-7d7b5fe7ab1d" />
+
+**Sales share permissions**
+
+<img width="819" height="871" alt="Sales share permissions" src="https://github.com/user-attachments/assets/460d2839-ef22-4b0a-8dbf-9ebecaf55b72" />
+
+**Sales NTFS permissions**
+
+<img width="1036" height="982" alt="Sales NTFS permissions" src="https://github.com/user-attachments/assets/f560a2fb-9c84-409e-bc89-6bf2e10e5647" />
+
+**Script re-run showing SKIP**
+
+<img width="1213" height="1272" alt="Script re-run showing SKIP" src="https://github.com/user-attachments/assets/08bed825-76a9-4524-b664-eac82cb9994d" />
+
+## Next
+Week 3: GPOs, file server, backup, second DC. See [week3-README.md](week3-README.md).
