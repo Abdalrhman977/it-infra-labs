@@ -15,8 +15,10 @@
 - Snapshots: client-joined, shares-done, ps-users, week2-done
 - Next: Week 3, GPOs, file server, backup, second DC
 
-## Week 3 (to 21 Nov 2026)
-- GPOs: password/lockout, Sales drive map + wallpaper, deny removable storage; Sales drive shows mapped on CLIENT01 (twice, S: and Z:)
-- Built FS01 file server, FSRM 500 MB quota on the HR share, quota blocked a 125 MB copy
-- wbadmin system-state backup of DC01 completed; AD Recycle Bin restore of two deleted users worked
-- Promoted DC02; dcdiag failed DFSREvent (SYSVOL replication), next: fix and check with repadmin
+## Week 3 (to 22 Nov 2026)
+- GPOs: password/lockout (min length 3, complexity off, 5-attempt lockout), Sales drive map + wallpaper, deny all removable storage; Sales drive shows mapped on CLIENT01 (twice, S: and Z:)
+- Built FS1 (192.168.10.12) with hr and sales shares, HR share = Change / NTFS = Modify, FSRM 500 MB hard quotas on both; quota blocked a 125 MB copy
+- wbadmin system-state backup completed; Recycle Bin enabled, restored two deleted users
+- Promoted DC02 (192.168.10.11, GC); repadmin /replsummary 0 failures, but dcdiag DFSREvent failed earlier
+- 22 Nov: took the missing screenshots (policies, FS1 config, quotas, IPs, DC02, Recycle Bin)
+- Next: re-run dcdiag on DC02, remove the duplicate Sales drive mapping, raise the password policy
