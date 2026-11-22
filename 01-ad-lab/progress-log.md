@@ -21,4 +21,6 @@
 - wbadmin system-state backup completed; Recycle Bin enabled, restored two deleted users
 - Promoted DC02 (192.168.10.11, GC); repadmin /replsummary 0 failures, but dcdiag DFSREvent failed earlier
 - 22 Nov: took the missing screenshots (policies, FS1 config, quotas, IPs, DC02, Recycle Bin)
-- Next: re-run dcdiag on DC02, remove the duplicate Sales drive mapping, raise the password policy
+- 22 Nov: DC01-down test: CLIENT01 logged on via DC02 (nltest, %logonserver%), hr share still worked
+- 22 Nov: set up DHCP hot-standby failover DC01 → DC02 and second DNS .11; client got its lease from DC02. Fixed a client pointing DNS at 8.8.8.8
+- Next: re-run dcdiag on DC02, remove the duplicate Sales drive mapping, raise the password policy to 12+
