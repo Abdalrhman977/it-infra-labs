@@ -55,7 +55,7 @@ DC01 also has a NAT adapter for internet updates. Details: [01-ad-lab](01-ad-lab
 
 ## How each lab is documented
 
-Each write-up covers:
+Each AD lab write-up covers:
 
 1. **Goal / overview**: what the week should achieve
 2. **Environment**: VMs, IPs, roles
@@ -63,6 +63,8 @@ Each write-up covers:
 4. **Verification**: screenshots proving it works
 5. **Problems and fixes**: symptom / cause / fix table
 6. **Lessons**: what I'd tell someone doing it next
+
+The Wireshark lab is a capture write-up instead: a table of captures with screenshots, the filters used, an HTTP vs HTTPS comparison and notes.
 
 ## Roadmap
 
