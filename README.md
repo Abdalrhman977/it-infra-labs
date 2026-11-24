@@ -50,6 +50,7 @@ DC01 also has a NAT adapter for internet updates. Details: [01-ad-lab](01-ad-lab
 
 `Active Directory` `Windows Server 2022` `DNS` `DHCP failover` `Group Policy` `FSRM`
 `NTFS / share permissions` `Backup / Recycle Bin` `repadmin / dcdiag` `PowerShell`
+`Wireshark` `TCP/IP` `TLS / HTTPS`
 `VMware Workstation` `Troubleshooting` `Technical documentation`
 
 ## How each lab is documented
