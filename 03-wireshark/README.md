@@ -14,6 +14,8 @@ Packet captures taken on a home network (home lab, not production).
 dhcp
 dns
 tcp.flags.syn==1
+http
+tls
 ```
 
 ## HTTP vs HTTPS
