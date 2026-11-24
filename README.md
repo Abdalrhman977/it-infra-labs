@@ -1,7 +1,7 @@
 # IT Infrastructure Home Labs
 
 Hands-on labs for Windows Server, Active Directory, networking, Linux and Azure, built in
-**VMware Workstation** and documented like real change tickets: goal → build → verification → what broke → lessons.
+**VMware Workstation** (plus Wireshark captures on a home network) and documented like real change tickets: goal → build → verification → what broke → lessons.
 
 > ⚠️ Home lab environment for learning. Not production. No real credentials are stored in this repo.
 
