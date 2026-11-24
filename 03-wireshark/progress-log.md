@@ -1,6 +1,6 @@
 # Progress Log
 
-## Week 7 (23 - 24 Nov 2026): Wireshark
+## Week 1 (23 - 24 Nov 2026): Wireshark
 - Captured DHCP (Discover/Offer/Request/ACK), DNS (AAAA query/response) and the TCP three-way handshake on the home network; see screenshots/
 - Wrote a 15-filter display filter cheat sheet (filter-cheatsheet.md)
 - Raw .pcapng files kept out of the repo (size and privacy), ignored in .gitignore
