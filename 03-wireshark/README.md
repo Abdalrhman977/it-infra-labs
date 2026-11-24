@@ -35,3 +35,4 @@ Takeaway: on HTTP anyone on the path can read the whole request and response; on
 - Raw `.pcapng` files are not committed: one is over 200 MB (GitHub's limit is 100 MB) and
   raw captures contain everything the PC sent during the capture.
 - Filter cheat sheet: [filter-cheatsheet.md](filter-cheatsheet.md)
+- Day-by-day notes: [progress-log.md](progress-log.md)
