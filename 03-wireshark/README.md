@@ -7,7 +7,7 @@ Packet captures taken on a home network (home lab, not production).
 | 03-dhcp | DHCP | The Discover / Offer / Request / ACK exchange (plus a Release), matched by transaction ID. The Offer carries the offered IP, subnet mask, router, DNS server and lease time. | [dhcp-offer-packet.png](screenshots/dhcp-offer-packet.png) |
 | 04-dns | DNS | A standard query/response for `linkedin.com` (AAAA record, TTL 300 s, answer in about 68 ms). | [dns-aaaa-response.png](screenshots/dns-aaaa-response.png) |
 | tcp | TCP | The three-way handshake. The client's SYN (`tcp.flags.syn==1`) to port 80 is selected, showing the sequence number, window size and options (MSS, window scale). | [tcp-syn-handshake.png](screenshots/tcp-syn-handshake.png) |
-| 06-tls | TLS | TLS capture (screenshot to be added). | not added yet |
+| 06-tls | TLS | The Client Hello to port 443: TLS 1.2 record version, `supported_versions` offering TLS 1.3 and 1.2, 20 cipher suites, and the site name in the `server_name` (SNI) extension. Everything after the handshake is encrypted. | [tls-client-hello.png](screenshots/tls-client-hello.png) |
 
 ## Filters used
 ```
