@@ -17,6 +17,7 @@ Set-ExecutionPolicy -Scope Process Bypass
 
 - CSV columns: `FirstName, LastName, Group` (see [newusers.sample.csv](newusers.sample.csv)).
 - The initial password is prompted at runtime and never stored. Users must change it at first logon.
+- `-WhatIf` still asks for the password (the prompt comes first), but creates nothing.
 - Safe to run twice: existing users are skipped. They are not updated, so a group change
   for an existing user needs `Add-ADGroupMember` by hand.
 - Undo: `Remove-ADUser First.Last` for any user created by mistake.
