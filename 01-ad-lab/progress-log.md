@@ -31,3 +31,4 @@
 - Raw .pcapng files kept out of the repo (size and privacy), ignored in .gitignore
 - Added an HTTP vs HTTPS comparison from the captures: HTTP shows the full request and response, HTTPS only the server and site name (03-wireshark/README.md)
 - Added a TLS Client Hello screenshot (03-wireshark/screenshots/tls-client-hello.png): TLS 1.3 offered and the site name readable in the SNI before encryption starts
+- Next: capture the AD lab traffic on labnet (CLIENT01 DHCP DORA from DC01/DC02, DNS SRV lookups, Kerberos logon), as on the README roadmap
