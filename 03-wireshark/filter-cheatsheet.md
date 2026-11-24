@@ -22,7 +22,7 @@ Display filters go in the bar at the top (they hide packets). Capture filters (B
 
 ## Combining
 - `and` / `&&`, `or` / `||`, `not` / `!`: for example `ip.addr == 192.168.1.2 && !arp`
-- `contains`, `matches` (regex), `in {80 443}`: for example `tcp.port in {80 443}`
+- `contains`, `matches` (regex), `in {80, 443}`: for example `tcp.port in {80, 443}`
 
 ## Quick use
 - Right-click a packet field, then **Apply as Filter**.
