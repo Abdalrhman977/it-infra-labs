@@ -15,7 +15,7 @@
 - Snapshots: client-joined, shares-done, ps-users, week2-done
 - Next: Week 3, GPOs, file server, backup, second DC
 
-## Week 3 (to 22 Nov 2026)
+## Week 3 (21 - 22 Nov 2026)
 - GPOs: password/lockout (min length 3, complexity off, 5-attempt lockout), Sales drive map + wallpaper, deny all removable storage; Sales drive shows mapped on CLIENT01 (twice, S: and Z:)
 - Built FS1 (192.168.10.12) with hr and sales shares, HR share = Change / NTFS = Modify, FSRM 500 MB hard quotas on both; quota blocked a 125 MB copy
 - wbadmin system-state backup completed; Recycle Bin enabled, restored two deleted users
