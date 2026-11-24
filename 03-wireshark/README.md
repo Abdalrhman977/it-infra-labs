@@ -16,8 +16,20 @@ dns
 tcp.flags.syn==1
 ```
 
+## HTTP vs HTTPS
+Same site (`linkedin.com`) requested over port 80 with `curl` (in the `tcp` capture) and over port 443 (`06-tls` capture).
+
+| | HTTP (port 80) | HTTPS (port 443) |
+|---|---|---|
+| Filter | `http` | `tls` |
+| Request visible? | Yes: method (`HEAD`), host, path (`/`) and `User-Agent: curl/8.21.0` are readable | No: only the TLS handshake is readable |
+| Response visible? | Yes: `200`, `Content-Type: text/html` | No: shown as `Application Data` (69 encrypted records) |
+| What still leaks | Everything | Server IP, port and the site name in the Client Hello SNI (`tls.handshake.extensions_server_name`) |
+| Version / cipher | n/a | Server Hello picked TLS 1.3 (`0x0304`), `TLS_AES_256_GCM_SHA384` |
+
+Takeaway: on HTTP anyone on the path can read the whole request and response; on HTTPS they see who you talk to, not what you say.
+
 ## Notes
 - Raw `.pcapng` files are not committed: one is over 200 MB (GitHub's limit is 100 MB) and
   raw captures contain everything the PC sent during the capture.
-- Next: add an HTTP vs HTTPS comparison.
 - Filter cheat sheet: [filter-cheatsheet.md](filter-cheatsheet.md)
