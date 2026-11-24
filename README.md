@@ -11,7 +11,7 @@ Hands-on labs for Windows Server, Active Directory, networking, Linux and Azure,
 |---|---|---|---|
 | 01 | [Active Directory](01-ad-lab/) | Domain controller, DNS, OUs, users/groups, client join, DHCP, file shares, PowerShell automation, GPOs, FSRM quotas, backup, second DC, DHCP failover | ✅ Weeks 1-3 done |
 | 02 | [Networking](02-network-lab/) | Subnetting, VLANs, routing | 🗓️ Planned |
-| 03 | [Wireshark](03-wireshark/) | Capturing and reading DHCP, DNS, ARP, TCP traffic | 🗓️ Planned |
+| 03 | [Wireshark](03-wireshark/) | Capturing and reading DHCP, DNS, ARP, TCP traffic | 🚧 Home-network captures done, AD lab captures next |
 | 04 | [Linux](04-linux/) | Users, permissions, services, SSH | 🗓️ Planned |
 | 05 | [Azure notes](05-azure-notes/) | Entra ID, VMs, virtual networks | 🗓️ Planned |
 | - | [scripts](scripts/) | PowerShell automation used in the labs | ✅ |
