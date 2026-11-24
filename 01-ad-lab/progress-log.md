@@ -25,7 +25,7 @@
 - 22 Nov: set up DHCP hot-standby failover DC01 → DC02 and second DNS .11; client got its lease from DC02. Fixed a client pointing DNS at 8.8.8.8
 - Weeks 1-3 done. Ideas for later are in README.md > Future plans
 
-## Week 7 (Wireshark)
+## Week 7 (23 - 24 Nov 2026): Wireshark
 - Captured DHCP (Discover/Offer/Request/ACK), DNS (AAAA query/response) and the TCP three-way handshake on the home network; screenshots in 03-wireshark
 - Wrote a 15-filter display filter cheat sheet (03-wireshark/filter-cheatsheet.md)
 - Raw .pcapng files kept out of the repo (size and privacy), ignored in .gitignore
