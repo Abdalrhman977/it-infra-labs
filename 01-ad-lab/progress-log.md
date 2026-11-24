@@ -29,4 +29,4 @@
 - Captured DHCP (Discover/Offer/Request/ACK), DNS (AAAA query/response) and the TCP three-way handshake on the home network; screenshots in 03-wireshark
 - Wrote a 15-filter display filter cheat sheet (03-wireshark/filter-cheatsheet.md)
 - Raw .pcapng files kept out of the repo (size and privacy), ignored in .gitignore
-- Next: HTTP vs HTTPS comparison
+- Added an HTTP vs HTTPS comparison from the captures: HTTP shows the full request and response, HTTPS only the server and site name (03-wireshark/README.md)
