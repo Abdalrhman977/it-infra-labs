@@ -30,6 +30,7 @@ Hands-on labs for Windows Server, Active Directory, networking, Linux and Azure,
 - **Second DC (DC02)** replicating with 0 failures (`repadmin /replsummary`)
 - **Failover test**: with DC01 down, the client logged on via DC02 and got its DHCP lease from DC02 (hot-standby failover)
 - **Troubleshooting documented** for every week (e.g. NTFS vs share permission conflict, dcdiag DNS timeouts after boot, wrong client DNS)
+- **Wireshark packet analysis** on the home network: DHCP Discover/Offer/Request/ACK, a DNS AAAA lookup and the TCP three-way handshake, plus an HTTP vs HTTPS comparison (HTTP readable in full, HTTPS showing only the server and SNI) and a 15-filter cheat sheet
 
 ## Lab topology
 
