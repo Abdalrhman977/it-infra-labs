@@ -19,5 +19,5 @@ tcp.flags.syn==1
 ## Notes
 - Raw `.pcapng` files are not committed: one is over 200 MB (GitHub's limit is 100 MB) and
   raw captures contain everything the PC sent during the capture.
-- Next: add a one-page cheat sheet of 15 filters and an HTTP vs HTTPS comparison.
+- Next: add an HTTP vs HTTPS comparison.
 - Filter cheat sheet: [filter-cheatsheet.md](filter-cheatsheet.md)
