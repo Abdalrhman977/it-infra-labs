@@ -70,6 +70,7 @@ Each write-up covers:
 - [x] AD week 2: users, groups, client join, DHCP, shares, PowerShell
 - [x] AD week 3: Group Policy, file server, backup, second DC, DHCP failover
 - [ ] Networking lab
+- [x] Wireshark: home-network captures (DHCP, DNS, TCP, TLS), HTTP vs HTTPS, filter cheat sheet
 - [ ] Wireshark captures of the AD lab traffic (DHCP DORA, DNS SRV lookups, Kerberos)
 - [ ] Linux lab
 - [ ] Azure: extend the lab with Entra ID
